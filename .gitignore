@@ -1,0 +1,48 @@
+############################
+# Python cache
+############################
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+############################
+# Virtual environments
+############################
+venv/
+.venv/
+backend/**/venv/
+
+############################
+# ML models (DO NOT PUSH)
+############################
+*.h5
+*.pth
+*.pt
+*.onnx
+*.pkl
+*.joblib
+
+############################
+# Datasets (700MB → ignore)
+############################
+ml_training/dataset_raw/
+data/
+dataset/
+datasets/
+
+############################
+# Project specific ignores
+############################
+Testing/
+backend/backend/
+
+############################
+# OS files
+############################
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*

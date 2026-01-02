@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SKINAI – AI Skin Analyzer</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<!-- LANDING PAGE -->
+<div id="landingPage" class="page active fade">
+  <h1 class="title">SKINSENSE</h1>
+
+  <div class="btn-group">
+    <button class="big-btn" onclick="showPage('diseasePage')">🧪 Skin Disease Detection</button>
+    <button class="big-btn secondary" onclick="showPage('skincarePage')">✨ Skin Care Recommendation</button>
+  </div>
+</div>
+
+<!-- DISEASE DETECTION PAGE -->
+<div id="diseasePage" class="page fade">
+
+  <button class="back-btn" onclick="showPage('landingPage')">← Back</button>
+  <h2 class="subtitle">Skin Disease Detection</h2>
+
+  <div class="upload-card">
+    <input type="file" id="diseaseInput" accept="image/*" onchange="previewImage(event)">
+    <img id="previewImg" class="preview hidden" />
+    <button id="detectBtn" class="primary-btn">Analyze</button>
+  </div>
+
+  <div id="detectLoader" class="loader hidden">Analyzing…</div>
+
+  <div id="diseaseResult" class="result-card hidden">
+    <h3 id="diseaseName"></h3>
+    <p><strong>Confidence:</strong> <span id="confText"></span></p>
+    <p><strong>Severity:</strong> <span id="sevText"></span></p>
+
+    <h4>Advice</h4>
+    <p id="advText"></p>
+  </div>
+</div>
+
+<!-- SKINCARE PAGE -->
+<div id="skincarePage" class="page fade">
+  <button class="back-btn" onclick="showPage('landingPage')">← Back</button>
+  <h2 class="subtitle">Skin Care Recommendation</h2>
+
+  <div class="upload-card">
+
+    <!-- Image Upload -->
+    <label>Upload Face Image</label>
+    <input type="file" id="skcareImage" accept="image/*" onchange="previewSkincareImage(event)">
+    <img id="skcarePreview" class="preview hidden" />
+
+
+    <hr style="opacity:0.2; margin:20px 0;">
+
+    <!-- Questionnaire -->
+    <div class="form-group">
+      <label>Skin Type</label>
+      <select id="q_skin_type">
+        <option>Oily</option>
+        <option>Dry</option>
+        <option>Combination</option>
+        <option>Normal</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Sensitivity</label>
+      <select id="q_sensitivity">
+        <option>No</option>
+        <option>Yes</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Frequency of Product Use</label>
+      <select id="q_frequency">
+        <option>Daily</option>
+        <option>Weekly</option>
+        <option>Occasionally</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Sun Exposure</label>
+      <select id="q_sun">
+        <option>Low</option>
+        <option>Moderate</option>
+        <option>High</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Sleep Quality</label>
+      <select id="q_sleep">
+        <option>Good</option>
+        <option>Average</option>
+        <option>Poor</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Goal</label>
+      <select id="q_goal">
+        <option>Reduce acne</option>
+        <option>Reduce blackheads</option>
+        <option>Hydration</option>
+        <option>Tone correction</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Diet Habits</label>
+      <select id="q_diet">
+        <option>High oily food</option>
+        <option>Balanced</option>
+        <option>Hydrated</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Current Skincare Routine</label>
+      <input type="text" id="q_routine" placeholder="cleanser, moisturizer">
+    </div>
+
+    <div class="form-group">
+      <label>Sun Exposure Hours</label>
+      <input type="number" id="q_sun_hours" value="1">
+    </div>
+
+    <div class="form-group">
+      <label>Medication Affecting Skin</label>
+      <select id="q_med_yes">
+        <option>No</option>
+        <option>Yes</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Medication Details (optional)</label>
+      <input type="text" id="q_med_text" placeholder="Accutane, etc">
+    </div>
+
+    <button id="skincareBtn" class="primary-btn">Get Recommendations</button>
+  </div>
+
+  <div id="skincareLoader" class="loader hidden">Processing…</div>
+
+  <div id="skincareResult" class="result-card hidden">
+
+    <h3>Routine</h3>
+    <div id="routineList"></div>
+
+    <h3>Products</h3>
+    <div id="productList"></div>
+
+    <h3>Safety Notes</h3>
+    <ul id="safetyList"></ul>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* ---------------------------
+   Dark Theme Global Styles
+----------------------------*/
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #0e0f12;
+    color: #e4e4e7;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    min-height: 100vh;
+    overflow-y: auto;   /* ONLY 1 SCROLLBAR */
+}
+
+/* Page Layout */
+.page {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+
+    width: 100%;
+    max-width: 430px;
+    padding: 20px;
+
+    height: auto;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Titles */
+.title {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.big-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #4f46e5;
+    color: white;
+    transition: 0.2s;
+}
+
+.big-btn:hover {
+    background: #4338ca;
+}
+
+.big-btn.secondary {
+    background: #1f2937;
+}
+
+.big-btn.secondary:hover {
+    background: #374151;
+}
+
+/* Back */
+.back-btn {
+    background: none;
+    border: none;
+    color: #a5b4fc;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Upload Card */
+.upload-card {
+    background: #1a1c21;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #2a2c31;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4f46e5;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #4338ca;
+}
+
+/* Form */
+.form-group {
+    text-align: left;
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    background: #111317;
+    border: 1px solid #2a2c31;
+    border-radius: 8px;
+    color: white;
+}
+
+/* Loader */
+.loader {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Result Card */
+.result-card {
+    background: #1a1c21;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #2a2c31;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Routine Card */
+.routine-card {
+    background: #111317;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #22252b;
+    text-align: left;
+}
+
+.routine-step {
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #a5b4fc;
+}
+
+.routine-action {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.routine-notes {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Product Card */
+.product-card {
+    background: #111317;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #22252b;
+    text-align: left;
+}
+
+.product-card h4 {
+    margin: 0 0 8px;
+    color: #93c5fd;
+}
+
+.product-card ul {
+    margin: 6px 0 10px;
+    padding-left: 20px;
+}
+
+/* Safety Notes */
+#safetyList li {
+    margin-bottom: 8px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* Preview Image */
+.preview {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+    border: 1px solid #2a2c31;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
