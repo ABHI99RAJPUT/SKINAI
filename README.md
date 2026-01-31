@@ -22,6 +22,8 @@ Welcome to **SkinSense** - where cutting-edge artificial intelligence meets pers
 <div align="center">
 
 ### 🧬 **Smart Disease Detection**
+## UI/UX
+![image alt](https://github.com/ABHI99RAJPUT/SKINAI/blob/3c836d7eb08de8d6d10527d5ae804c27570e63ce/skin%20ai%20pic%201.jpeg)
 
 
 ```
